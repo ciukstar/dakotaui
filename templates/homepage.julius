@@ -1,0 +1,121 @@
+
+document.getElementById(#{idButtonExportPdf}).addEventListener('click', async () => {
+  try {
+    const doc = new jspdf.jsPDF({
+      unit: "px",
+      orientation: "l",
+      hotfixes: ["px_scaling"]
+    });
+    await doc.html(document.querySelector(".charts-box"), {
+      filename: "charts.pdf",
+      html2canvas: {
+        allowTaint: true,
+        backgroundColor: "transparent"
+      }
+    }).save();
+    
+  } catch (e) {
+    console.error("failed to export", e);
+  }
+});
+
+fetch('@{StaticR img_sensor_map_svg}').then(r => r.text()).then(svg => {
+  echarts.registerMap('sensor_map', {svg:svg});
+  const map = echarts.init(document.getElementById(#{idSensorMap}));
+
+  map.setOption({
+    tooltip: {},
+    geo: {
+      map: 'sensor_map',
+      roam: true,
+      selectedMode: 'single',
+      layoutCenter: ['50%','50%'],
+      layoutSize: '100%',
+      tooltip: { show: true },
+      itemStyle: {
+        color: 'blue'
+      },
+      emphasis: {
+        itemStyle: {
+          color: undefined,
+          borderColor: 'green',
+          borderWidth: 2
+        },
+        label: {
+          show: false
+        }
+      },
+      select: {
+        itemStyle: {
+          color: 'green'
+        },
+        label: {
+          show: false,
+          textBorderColor: '#fff',
+          textBorderWidth: 2
+        }
+      }
+    }
+  });
+
+  map.on('geoselectchanged', function (params) {
+    console.log('params: ', params);
+  });
+  
+});
+
+[[ #{idChart1},
+   'line',
+   #{msgr MsgTemperatureValue},
+   ['9:07', '9:14', '9:21', '9:28', '9:36', '9:43', '9:50'],
+   [8.7, 8.5, 8.8, 8.7, 8.5, 8.0, 8.3],
+   true
+ ],
+ [ #{idChart2},
+   'bar',
+   #{msgr $ MsgValueOfIndicator "O3"},
+   ['9:15', '9:30', '9:45', '10:00', '10:15', '10:30', '10:45'],
+   [58.7, 58.5, 58.8, 58.7, 58.6, 58.3, 58.5],
+   false
+ ],
+ [ #{idChart3},
+   'line',
+   #{msgr $ MsgValueOfIndicator "O2"},
+   ['9:15', '9:30', '9:45', '10:00', '10:15', '10:30', '10:45'],
+   [58.7, 58.5, 58.8, 58.7, 58.6, 58.3, 58.5],
+   false
+ ]
+].forEach(([chart,type,title,categs,values,smooth]) => {
+  echarts.init(document.getElementById(chart)).setOption({
+    grid: {
+      top: 30,
+      bottom: 30
+    },
+    title: {
+      text: title,
+      left: 'center'
+    },
+    boundaryGap: true,
+    xAxis: {
+      type: 'category',
+      axisTick: {
+        show: true ,
+        alignWithLabel: true
+      },
+      data: categs
+    },
+    yAxis: {
+      type: 'value',
+      min: Math.min(... values),
+      max: Math.max(... values)
+    },
+    series: [
+      {
+        data: values,
+        type: type,
+        smooth: smooth
+      }
+    ]
+  });
+});
+

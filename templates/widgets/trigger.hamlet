@@ -1,0 +1,4 @@
+
+$forall (media,size) <- mediae
+  <button.trigger-main-menu.circle.#{media}.#{size}>
+    <i>menu

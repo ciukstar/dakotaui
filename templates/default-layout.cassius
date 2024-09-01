@@ -1,0 +1,174 @@
+
+body.light
+    --primary: #008f79
+    --on-primary: #ffffff
+    --primary-container: #74f8e5
+    --on-primary-container: #00201c
+    --secondary: #4a635f
+    --on-secondary: #ffffff
+    --secondary-container: #cce8e2
+    --on-secondary-container: #05201c
+    --tertiary: #456179
+    --on-tertiary: #ffffff
+    --tertiary-container: #cce5ff
+    --on-tertiary-container: #001e31
+    --error: #ba1a1a
+    --on-error: #ffffff
+    --error-container: #ffdad6
+    --on-error-container: #410002
+    --background: #fafdfb
+    --on-background: #191c1b
+    --surface: #f7faf8
+    --on-surface: #191c1b
+    --surface-variant: #dae5e1
+    --on-surface-variant: #3f4947
+    --outline: #6f7977
+    --outline-variant: #bec9c6
+    --shadow: #000000
+    --scrim: #000000
+    --inverse-surface: #2d3130
+    --inverse-on-surface: #eff1ef
+    --inverse-primary: #53dbc9
+    --surface-dim: #d8dbd9
+    --surface-bright: #f7faf8
+    --surface-container-lowest: #ffffff
+    --surface-container-low: #f2f4f2
+    --surface-container: #eceeec
+    --surface-container-high: #e6e9e7
+    --surface-container-highest: #e0e3e1
+
+body.dark
+    --primary: #ffb59a
+    --on-primary: #5b1b00
+    --primary-container: #7b2e0d
+    --on-primary-container: #ffdbcf
+    --secondary: #e7beaf
+    --on-secondary: #442a20
+    --secondary-container: #5d4035
+    --on-secondary-container: #ffdbcf
+    --tertiary: #d5c68e
+    --on-tertiary: #393005
+    --tertiary-container: #50471a
+    --on-tertiary-container: #f2e2a8
+    --error: #ffb4ab
+    --on-error: #690005
+    --error-container: #93000a
+    --on-error-container: #ffb4ab
+    --background: #201a18
+    --on-background: #ede0dc
+    --surface: #181210
+    --on-surface: #ede0dc
+    --surface-variant: #53433e
+    --on-surface-variant: #d8c2bb
+    --outline: #a08d86
+    --outline-variant: #53433e
+    --shadow: #000000
+    --scrim: #000000
+    --inverse-surface: #ede0dc
+    --inverse-on-surface: #362f2c
+    --inverse-primary: #9a4522
+    --surface-dim: #181210
+    --surface-bright: #3f3835
+    --surface-container-lowest: #120d0b
+    --surface-container-low: #201a18
+    --surface-container: #251e1c
+    --surface-container-high: #2f2826
+    --surface-container-highest: #3b3331
+
+@media (prefers-color-scheme: light)
+    body
+      --primary: #006a60
+      --on-primary: #ffffff
+      --primary-container: #74f8e5
+      --on-primary-container: #00201c
+      --secondary: #4a635f
+      --on-secondary: #ffffff
+      --secondary-container: #cce8e2
+      --on-secondary-container: #05201c
+      --tertiary: #456179
+      --on-tertiary: #ffffff
+      --tertiary-container: #cce5ff
+      --on-tertiary-container: #001e31
+      --error: #ba1a1a
+      --on-error: #ffffff
+      --error-container: #ffdad6
+      --on-error-container: #410002
+      --background: #fafdfb
+      --on-background: #191c1b
+      --surface: #f7faf8
+      --on-surface: #191c1b
+      --surface-variant: #dae5e1
+      --on-surface-variant: #3f4947
+      --outline: #6f7977
+      --outline-variant: #bec9c6
+      --shadow: #000000
+      --scrim: #000000
+      --inverse-surface: #2d3130
+      --inverse-on-surface: #eff1ef
+      --inverse-primary: #53dbc9
+      --surface-dim: #d8dbd9
+      --surface-bright: #f7faf8
+      --surface-container-lowest: #ffffff
+      --surface-container-low: #f2f4f2
+      --surface-container: #eceeec
+      --surface-container-high: #e6e9e7
+      --surface-container-highest: #e0e3e1
+
+
+@media (prefers-color-scheme: dark)
+    body
+        --primary: #ffb59a
+        --on-primary: #5b1b00
+        --primary-container: #7b2e0d
+        --on-primary-container: #ffdbcf
+        --secondary: #e7beaf
+        --on-secondary: #442a20
+        --secondary-container: #5d4035
+        --on-secondary-container: #ffdbcf
+        --tertiary: #d5c68e
+        --on-tertiary: #393005
+        --tertiary-container: #50471a
+        --on-tertiary-container: #f2e2a8
+        --error: #ffb4ab
+        --on-error: #690005
+        --error-container: #93000a
+        --on-error-container: #ffb4ab
+        --background: #201a18
+        --on-background: #ede0dc
+        --surface: #181210
+        --on-surface: #ede0dc
+        --surface-variant: #53433e
+        --on-surface-variant: #d8c2bb
+        --outline: #a08d86
+        --outline-variant: #53433e
+        --shadow: #000000
+        --scrim: #000000
+        --inverse-surface: #ede0dc
+        --inverse-on-surface: #362f2c
+        --inverse-primary: #9a4522
+        --surface-dim: #181210
+        --surface-bright: #3f3835
+        --surface-container-lowest: #120d0b
+        --surface-container-low: #201a18
+        --surface-container: #251e1c
+        --surface-container-high: #2f2826
+        --surface-container-highest: #3b3331
+
+
+@media only screen and (max-width: 600px)
+    header
+       padding: 0 0.5rem
+    header, .header-center
+       column-gap: 0.5rem
+
+@media only screen and (min-width: 601px) and (max-width: 992px)
+    header
+       padding: 0 1rem
+    header, .header-center
+       column-gap: 1rem
+
+@media only screen and (min-width: 993px)
+    header
+       padding: 0 1rem
+    header, .header-center
+       column-gap: 1rem

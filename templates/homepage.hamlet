@@ -1,0 +1,58 @@
+
+
+^{widgetMainMenu idDialogMainMenu}
+
+<header.responsive.background>
+
+  ^{widgetLogo}
+
+  <div.header-center>
+    $forall (media,size) <- mediae
+      <button.round.#{media}.#{size}>
+        <span.upper>_{MsgCrashes}
+        <i.m.l>schedule
+
+    ^{widgetTheme}
+
+    ^{widgetLang LangR HomeR}
+        
+  ^{widgetMainMenuTrigger idDialogMainMenu}
+
+<main.responsive>
+
+  <article.round.border.no-margin ##{idArticleSensorMap}>
+    <nav>
+      <button.circle.small>
+        <i>keyboard_arrow_down
+      <div.max.field.border.round.small>
+        <input placeholder=_{MsgEnterYourQuery}>
+      <button.circle.small>
+        <i>search
+    
+    <div ##{idSensorMap}>
+
+  <article.round.border.no-margin ##{idArticleIdicators}>
+    <nav>
+      <button.circle.small>
+        1D
+      <button.max>
+        _{MsgMountPointName}
+      <button.circle.small>
+
+    <div.charts-box>
+      <div ##{idChart1}>
+
+      <div ##{idChart2}>
+
+      <div ##{idChart3}>
+    
+    
+    <nav.no-space.center-align>
+      <button.left-round.small ##{idButtonExportPdf}>
+        <span.upper>PDF
+      <button.no-round.small>
+        <span.upper>XLSX
+      <button.right-round.small>
+        <span.upper>CSV
+
+  ^{widgetSnackbar msgs}

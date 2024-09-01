@@ -1,0 +1,4 @@
+
+<figure ##{idFigureLogo}>
+  <a href=@{HomeR}>
+    <img src=@{StaticR img_logo_svg} width=auto loading=lazy>

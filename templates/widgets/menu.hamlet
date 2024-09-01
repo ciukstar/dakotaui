@@ -1,0 +1,40 @@
+
+<dialog.right.no-padding.primary.modal ##{idDialogMainMeu}>
+  <nav.drawer>
+    <header>
+      <nav>
+        <button.transparent.circle.large ##{idButtonMainMenuClose}>
+          <i>close
+    <a>
+      <i>list_alt
+      <span.max.upper>_{MsgReport}
+    <a>
+      <i>list_alt
+      <span>_{MsgTest}
+    <a>
+      <i>list_alt
+      <span>_{MsgTest}
+    <a>
+      <i>list_alt
+      <span>_{MsgTest}
+      
+    $if admin
+      <hr>
+
+      <a href=@{DataR UsersR}>
+        <i>group
+        <span>_{MsgUsers}
+    
+    <hr>
+
+    $maybe Entity _ (User email _ _ _) <- user
+      <div.row style="padding:0.75rem">
+        <i.small>account_circle
+        #{email}
+      <a href=@{AuthR LogoutR}>
+        <i>logout
+        <span>_{MsgSignOut}
+    $nothing
+      <a href=@{AuthR LoginR}>
+        <i>login
+        <span>_{MsgSignIn}

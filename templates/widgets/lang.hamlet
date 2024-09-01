@@ -1,0 +1,16 @@
+
+
+$forall (media,size) <- mediae
+  $with idMenu <- idMenuLang <> media
+    <button.trigger-lang.circle.#{media}.#{size} data-ui=##{idMenu}>
+      <i>language
+      <menu.right.no-wrap ##{idMenu}>
+        $forall (lang,label) <- langs
+          <a role=menuitem data-lang=#{lang}>
+            #{label}
+
+<form method=post action=@{action} ##{idFormLang} hidden>
+  <input type=url name=backlink value=@{route}>
+  <select name=lang form=#{idFormLang} ##{idHiddenSelect}>
+    <option value=ru :"ru" == lang:selected>RU
+    <option value=en :"en" == lang:selected>EN

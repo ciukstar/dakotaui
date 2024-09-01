@@ -1,0 +1,50 @@
+-- By default this file is used by `persistFileWith` in Model.hs (which is imported by Foundation.hs)
+-- Syntax for this file here: https://github.com/yesodweb/persistent/blob/master/docs/Persistent-entity-syntax.md
+
+Meter
+    sensor SensorId OnDeleteCascade
+    parameter ParameterId  OnDeleteCascade
+    timestamp UTCTime
+    value Double
+
+Sensor
+    controller ControllerId OnDeleteCascade
+    parameter ParameterId  OnDeleteCascade
+    address Text sql=adres
+    mountPoint Text
+
+Parameter
+    name Text
+    symbol Text
+    measure Text
+    min Double
+    max Double
+
+Controller
+    brithday UTCTime
+    model Int
+
+Role
+    name Text
+    UniqueRole name
+
+
+User
+    email Text
+    password Text Maybe
+    role RoleId OnDeleteCascade
+    telegram Text -- no table
+    UniqueUser email
+    deriving Typeable
+    
+Email
+    email Text
+    userId UserId Maybe
+    verkey Text Maybe
+    UniqueEmail email
+
+Comment json -- Adding "json" causes ToJSON and FromJSON instances to be derived.
+    message Text
+    userId UserId Maybe
+    deriving Eq
+    deriving Show

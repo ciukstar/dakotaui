@@ -1,0 +1,24 @@
+
+<header.background>
+
+  ^{widgetTheme}
+
+  <figure.logo>
+    <img src=@{StaticR img_logo_svg} height=48 width=auto loading=lazy>
+
+  ^{widgetLang LangR (AuthR LoginR)}
+
+<main>
+
+  $forall (_,msg) <- msgs
+    <p.error-text>
+      #{msg}
+        
+  <form method=post action=@{PwdResetR}>
+  
+    <div.field.label.round.border>
+      <input type=text name=email required>
+      <label>_{MsgEmail}
+      
+    <button type=submit>
+      _{MsgResetPassword}

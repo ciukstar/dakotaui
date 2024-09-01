@@ -1,0 +1,5 @@
+
+
+document.getElementById(#{idButtonMainMenuClose}).addEventListener('click', function (e) {
+  document.getElementById(#{idDialogMainMeu}).close();
+});

@@ -1,0 +1,30 @@
+
+<header.background>
+
+  ^{widgetLogo}
+
+  <div.header-center>
+    ^{widgetTheme}
+
+    ^{widgetLang LangR HomeR}
+        
+
+  ^{widgetMainMenuTrigger idDialogMainMeu}
+
+<main>
+
+  <article.round.border ##{idArticleSensorMap}>
+    <nav>
+      <button.circle.small>
+        <i>keyboard_arrow_down
+      <div.field.border.round>
+        <input placeholder=_{MsgUpdateMap}>
+      <button.circle.small>
+        <i>search
+    
+    <div ##{idSensorMap} style="height:300px">
+
+  <article.round.border>
+
+
+^{widgetMainMenu idDialogMainMeu}

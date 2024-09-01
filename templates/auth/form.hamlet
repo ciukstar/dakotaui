@@ -1,0 +1,30 @@
+
+<header.background>
+
+  ^{widgetTheme}
+
+  ^{widgetLogo}
+
+  ^{widgetLang LangR (AuthR LoginR)}
+
+<main>
+
+  $forall (_,msg) <- msgs
+    <p.error-text>
+      #{msg}
+        
+  <form method=post action=@{route}>
+  
+    <div.field.label.round.border>
+      <input type=text name=username required>
+      <label>_{MsgUsername}
+      
+    <div.field.label.round.border>
+      <input type=password name=password required>
+      <label>_{MsgPassword}
+      
+    <button type=submit>
+      _{MsgSignIn}
+
+    <a.link href=@{PwdResetR}>
+      _{MsgRestoreLogin}

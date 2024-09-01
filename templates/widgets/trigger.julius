@@ -1,0 +1,9 @@
+
+
+Array.from(
+  document.querySelectorAll('button.trigger-main-menu')
+).forEach(x => {
+  x.addEventListener('click', e => {
+    document.getElementById(#{idDialogMainMeu}).showModal();
+  });
+});
